@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Forms</title>
+</head>
+<body>
+  <h1>Form control rules:</h1>
+  <ul>
+    <li>All form controls have values</li>
+    <li>All form controls should have names</li>
+    <li>text inputs - name and id could match</li>
+    <li>for attribute of label matches id of input</li>
+  </ul>
+  <form>
+    <!-- text inputs - name and id could match -->
+    <!-- for attribute of label matches id of input -->
+    <div>
+      <label for="firstName">First Name:</label>
+      <input type="text" name="firstName" id="firstName">
+    </div>
+    <div>
+      <label for="lastName">Last Name:</label>
+      <input type="text" name="lastName" id="lastName">
+    </div>
+    <div>
+      <label for="userPassword">Password:</label>
+      <input type="password" name="userPassword" id="userPassword">
+    </div>
+    <div>
+      <label for="birthdate">Birthdate:</label>
+      <input type="date" name="birthdate" id="birthdate">
+    </div>
+    <!-- radio button family members should share the same name -->
+    <!-- don't forget to marry them with the label's for and the input's id -->
+    <!-- also don't forget the values -->
+    <fieldset>
+      <legend>How did you hear about us?</legend>
+      <input type="radio" name="heardAbout" id="advertisement" value="advertisement">
+      <label for="advertisement">Advertisement</label>
+      <input type="radio" name="heardAbout" id="wordOfMouth" value="wordOfMouth">
+      <label for="wordOfMouth">Word of Mouth</label>
+      <input type="radio" name="heardAbout" id="webSearch" value="webSearch">
+      <label for="webSearch">Web Search</label>
+    </fieldset>
+    <div>
+      <label for="comments">Comments:</label>
+      <br>
+      <textarea name="comments" id="comments" cols="30" rows="10"></textarea>
+    </div>
+    <div>
+      <label for="favoriteTeam">What's your favorite Chicago team?</label>
+      <br>
+      <select name="favoriteTeam" id="favoriteTeam">
+        <option value="bears">Chicago Bears</option>
+        <option value="cubs">Chicago Cubs</option>
+        <option value="sox">Chicago White Sox</option>
+        <option value="bulls">Chicago Bulls</option>
+        <option value="blackhawks">Chicago Blackhawks</option>
+      </select>
+    </div>
+    <!-- submit button must be inside the form tags -->
+    <input type="reset" value="clear form">
+    <input type="submit" value="send form">
+    <!-- <button type="submit">Send Form</button> -->
+    <!-- <button>Send Form</button> do not recommend -->
+  </form>
+</body>
+</html>
