@@ -1,0 +1,55 @@
+.container {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 20px;
+  background-color: bisque;
+  min-height: 200px;
+}
+
+.flex-item {
+  background-color: darkkhaki;
+  flex: 1;
+  min-height: 100px;
+}
+
+.misbehave {
+  align-self: flex-start;
+}
+
+.two-pieces {
+  flex: 2;
+}
+
+.three-pieces {
+  flex: 3;
+}
+
+.background {
+  margin-top: 20px;
+  background-color: bisque;
+  min-height: 300px;
+}
+
+header {
+  background-color: palegreen;
+  min-height: 50px;
+}
+
+main {
+  background-color: paleturquoise;
+  flex: 4;
+  min-height: 300px;
+}
+
+aside {
+  background-color: palevioletred;
+  flex: 1;
+  min-height: 200px;
+  align-self: flex-start;
+}

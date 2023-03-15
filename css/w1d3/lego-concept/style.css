@@ -1,0 +1,68 @@
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  background-color: bisque;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+header {
+  background-color: burlywood;
+}
+
+section {
+  min-height: 90vh;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  background-color: aquamarine;
+  min-height: 200px;
+  flex: 1;
+}
+
+.motto {
+  background-color: cadetblue;
+  min-height: 200px;
+  flex: 3;
+}
+
+#about-us {
+  background-color: coral;
+}
+
+.about {
+  background-color: darkgoldenrod;
+  flex: 3;
+  min-height: 200px;
+}
+
+.tagline {
+  background-color: deepskyblue;
+  min-height: 200px;
+  flex: 2;
+}
+
+#services {
+  background-color: forestgreen;
+}
+
+.service {
+  background-color: firebrick;
+  flex: 1;
+  min-height: 200px;
+}
+
+footer {
+  background-color: indianred;
+  min-height: 100px;
+}
