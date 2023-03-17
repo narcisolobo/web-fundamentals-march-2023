@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+.display {
+  font-family: 'Amatic SC', cursive;
+}
+
+.container {
+  width: 80%;
+  margin-inline: auto;
+}
+
+.centered {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.flex-1 {
+  flex: 1;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.grid-center {
+  display: grid;
+  place-content: center;
+}
+
+.spacer {
+  margin-bottom: 4rem;
+}
+
+figure {
+  background-color: white;
+  color: #001120;
+  padding: 1.5rem;
+  border-radius: .5rem;
+}
+
+.emoji {
+  font-size: 2rem;
+}
+
+body,
+h1 {
+  margin: 0;
+}
+
+body {
+  background-color: #001120;
+  color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5em;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+p {
+  margin-bottom: 2rem;
+}
+
+ol {
+  margin-bottom: 2rem;
+}
+
+table {
+  width: 100%;
+}
+
+table, th, td {
+  border-collapse: collapse;
+  border: 1px solid white;
+  text-align: center;
+}
+
+.titles {
+  line-height: 1.2;
+}
+
+.title {
+  text-align: center;
+  font-size: 4rem;
+}
+
+.subtitle {
+  font-size: 2.5rem;
+  color: rgb(188, 188, 188);
+}
+
+nav {
+  padding: 0.5rem 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, .3);
+}
+
+main {
+  min-height: 100vh;
+}
+
+.thinking-bear {
+  width: 300px;
+}
+
+section {
+  min-height: 90vh;
+  padding: 15rem 0;
+  position: relative;
+}
+
+.one {
+  filter: opacity(75%);
+  color: #001120;
+}
+
+.one::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  z-index: -1;
+  background-color: lightblue;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+}
+
+.footsie {
+  aspect-ratio: 3 / 2;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.layered-waves {
+  background-image: url('./assets/layered-waves-haikei.svg');
+}
+
+@media (max-width: 600px) {
+  .flex {
+    flex-direction: column;
+  }
+}
