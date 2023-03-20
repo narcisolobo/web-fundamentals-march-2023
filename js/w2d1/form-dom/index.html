@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/pico.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Forms and the DOM</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Even More DOM Stuff</h1>
+      <h2 class="mt">Changing Images</h2>
+      <img
+        src="./images/mario.webp"
+        alt="mario"
+        class="mb"
+        onmouseover="changeImage(this)" />
+      <hgroup class="mt">
+        <h2>Forms and the DOM</h2>
+        <h3>Pulling Values from Form Elements Using JavaScript</h3>
+        <p>
+          All form controls (inputs, selects, checkboxes, etc. have a
+          <em>value.</em>)
+        </p>
+      </hgroup>
+      <article>
+        <p>By default, the first button in a form is a submit button.</p>
+        <p>Therefore, I recommend omitting the form tags.</p>
+        <label for="search">What are you looking for?</label>
+        <div class="grid">
+          <input
+            type="text"
+            id="search"
+            name="search"
+            placeholder="Search..." />
+          <button role="button" onclick="searchAlert()">Submit</button>
+        </div>
+      </article>
+      <article>
+        <form>
+          <label for="fruit">Fruit</label>
+          <select id="fruit" onchange="alert(this.value)">
+            <option selected hidden disabled>Select a fruit…</option>
+            <option value="🍏 Green Apple">🍏 Green Apple</option>
+            <option value="🍌 Banana">🍌 Banana</option>
+            <option value="🍉 Watermelon">🍉 Watermelon</option>
+            <option value="🍇 Grapes">🍇 Grapes</option>
+            <option value="🥝 Kiwi">🥝 Kiwi</option>
+          </select>
+        </form>
+      </article>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>

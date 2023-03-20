@@ -1,0 +1,18 @@
+.mt {
+  margin-top: 1.5rem;
+}
+
+.mb {
+  margin-bottom: 1.5rem;
+}
+
+article {
+  padding-bottom: 1em;
+}
+
+img {
+  width: 400px;
+  padding: 2rem;
+  background-color: #141e26;
+  border-radius: .5rem;
+}
