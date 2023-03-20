@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/ffd2134fa2.js"
+      crossorigin="anonymous"></script>
+    <title>More DOM</title>
+  </head>
+  <body>
+    <h1>More DOM</h1>
+    <div class="flex container">
+      <aside class="text-center">
+        <i class="fa-solid fa-user-ninja icon"></i>
+      </aside>
+      <main>
+        <h2>RULE OF THUMB:</h2>
+        <p>
+          If the element being manipulated is the same element that you're
+          listening to, use "this". If they are different, use the id name.
+        </p>
+        <div class="joke" id="jokeContainer1" onmouseover="jokeHover(this)" onmouseout="jokeHoverOut(this)">
+          <h2>I once lost a banana at court but then I appealed.</h2>
+          <p>Chuckle Count: <span id="joke1">0</span></p>
+          <div class="joke-footer">
+            <button class="btn" onclick="groanJoke1()">
+              <i class="fa-regular fa-face-meh"></i>
+            </button>
+            <button class="btn" onclick="chuckle(joke1)">
+              <i class="fa-solid fa-face-grin-tears"></i>
+            </button>
+          </div>
+        </div>
+        <div class="joke" id="jokeContainer2">
+          <h2>The urge to sing the Lion King song is just a whim away.</h2>
+          <p>Chuckle Count: <span id="joke2">0</span></p>
+          <div class="joke-footer">
+            <button class="btn" onclick="groanJoke2()">
+              <i class="fa-regular fa-face-meh"></i>
+            </button>
+            <button class="btn" onclick="chuckle(joke2)">
+              <i class="fa-solid fa-face-grin-tears"></i>
+            </button>
+          </div>
+        </div>
+        <div class="joke" id="jokeContainer3">
+          <h2>What's the difference between an African elephant and an Indian elephant? About 5000 miles.
+          </h2>
+          <p>Chuckle Count: <span id="joke3">0</span></p>
+          <div class="joke-footer">
+            <button class="btn">
+              <i class="fa-regular fa-face-meh"></i>
+            </button>
+            <button class="btn" onclick="chuckle(joke3)">
+              <i class="fa-solid fa-face-grin-tears"></i>
+            </button>
+          </div>
+        </div>
+      </main>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
