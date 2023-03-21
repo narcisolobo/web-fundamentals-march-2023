@@ -1,44 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>CodeIt</title>
-</head>
-<body>
-  <!-- nav start -->
-  <nav class="flex">
-    <div class="flex">
-      <img src="./images/cat.svg" alt="CodeIt Cat" class="logo">
-      <p class="logo-text">CodeIt</p>
-      <input type="text" id="search">
-      <button>Join</button>
-    </div>
-    <div class="flex">
-      <button>Get App</button>
-      <button>Log In</button>
-    </div>
-  </nav>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>CodeIt</title>
+  </head>
+  <body>
+    <!-- nav start -->
+    <nav class="flex">
+      <div class="flex">
+        <img src="./images/cat.svg" alt="CodeIt Cat" class="logo" />
+        <p class="logo-text">CodeIt</p>
+        <div class="form">
+          <input type="text" id="search" />
+          <button onclick="alert('Searching for ' + search.value)" class="btn-go">Go</button>
+        </div>
+      </div>
+      <div class="flex">
+        <button class="btn btn-blue">Get App</button>
+        <button class="btn btn-gold">Log In</button>
+      </div>
+    </nav>
 
-  <!-- header start -->
-  <header>
-    <div class="flex container justify-start">
-      <img src="./images/cat.svg" alt="CodeIt Cat" class="logo">
-      <h1>c/Dojo</h1>
-      <button>Join</button>
-    </div>
-  </header>
+    <!-- header start -->
+    <header>
+      <div class="flex container justify-start">
+        <img src="./images/cat.svg" alt="CodeIt Cat" class="logo" />
+        <h1>c/Dojo</h1>
+        <button class="btn btn-red" onclick="hide(this)">Join</button>
+      </div>
+      <ul class="flex container justify-start menu">
+        <li><a href="#" class="active">Posts</a></li>
+        <li><a href="#">Wiki</a></li>
+        <li><a href="#">c/Dojo</a></li>
+        <li><a href="#">Discord</a></li>
+      </ul>
+    </header>
 
-  <!-- main start -->
-  <main class="flex container">
-    <!-- posts start -->
-    <section class="posts"></section>
-    <!-- sidebar start -->
-    <section class="sidebar"></section>
-  </main>
+    <!-- main start -->
+    <main class="flex container">
+      <!-- posts start -->
+      <section class="posts">
+        <div class="card">
+          <div class="card-body flex">
+            <div class="votes">
+              <img src="./images/arrow-up-short.svg" alt="upvote" class="arrow" onclick="upvote(vote1)" />
+              <p id="vote1">26</p>
+              <img src="./images/arrow-down-short.svg" alt="downvote" class="arrow">
+            </div>
+            <div class="card-content">
+              <h2 class="post-title">Best of Project Week 2022</h2>
+              <img src="./images/placeholder.webp" alt="placeholder" class="placeholder">
+              <div class="card-footer flex justify-start">
+                <img src="./images/chat-dots.svg" alt="chat" class="icon">
+                <p class="text-muted">42 comments</p>
+                <img src="./images/bi-share.svg" alt="share" class="icon">
+                <p class="text-muted">share</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body flex">
+            <div class="votes">
+              <img src="./images/arrow-up-short.svg" alt="upvote" class="arrow" onclick="upvote(vote2)" />
+              <p id="vote2">26</p>
+              <img src="./images/arrow-down-short.svg" alt="downvote" class="arrow">
+            </div>
+            <div class="card-content">
+              <h2 class="post-title">Best of Project Week 2022</h2>
+              <img src="./images/placeholder.webp" alt="placeholder" class="placeholder">
+              <div class="card-footer flex justify-start">
+                <img src="./images/chat-dots.svg" alt="chat" class="icon">
+                <p class="text-muted">42 comments</p>
+                <img src="./images/bi-share.svg" alt="share" class="icon">
+                <p class="text-muted">share</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- sidebar start -->
+      <section class="sidebar">
+        <div class="card">
+          <h3 class="card-header">About the Dojo</h3>
+          <div class="card-body">
+            <p>Changing lives with code and a dedicated community of debuggers.</p>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="card-header">Discord</h3>
+          <div class="card-body">
+            <button class="btn btn-white">discord.gg/cdojo</button>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="card-header">c/Dojo Rules</h3>
+          <div class="card-body">
+            <ol>
+              <li>Follow the 20 Minute Rule</li>
+              <li>Don't Compare Yourself To Others</li>
+              <li>Learn Actively</li>
+              <li>Don't Chase Best Practices (Yet)</li>
+              <li>When You're Behind, Ask For Help</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+    </main>
 
-  <script src="./script.js"></script>
-</body>
+    <script src="./script.js"></script>
+  </body>
 </html>
