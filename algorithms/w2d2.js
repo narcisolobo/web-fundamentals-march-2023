@@ -9,8 +9,11 @@ var monster = {
 };
 
 // Using the monster variable above how could we access the name?
+// console.log(monster.name); // dot notation
+// console.log(monster['name']) // bracket notation
 
 // Using the monster variable above how could we access the 2nd type?
+// console.log(monster.types[1]);
 
 // Arrays of Objects
 var pokémon = [
@@ -61,5 +64,6 @@ for (var i = 0; i < pokémon.length; i++) {
         second type is "flying"
 
     Bonus Challenge: console.log the reverse of the names
-    of the pokémon whose only type is "poison"
+    of the pokémon whose only type is "poison". You can use
+    built-ins.
 */
