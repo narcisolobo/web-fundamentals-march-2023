@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap');
+
+:root {
+  --transparent-black: rgba(0, 0, 0, .05);
+  --transparent-white: rgba(255, 255, 255, .45);
+  --transparent-border: 1px solid rgba(255, 255, 255, .25);
+  --box-shadow: 0 0 1rem 1px rgba(0, 0, 0, .25);
+  --backdrop-blur: blur(15px);
+  --display-font: 'Comfortaa', cursive;
+}
+
+body {
+  /* display: grid;
+  place-content: center;
+  min-height: 100vh; */
+  color: rgb(25, 25, 25);
+  font-family: 'Open Sans', sans-serif;
+  background-image: url('./images/stacked-waves-haikei.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+a:link,
+a:visited {
+  color: rgb(0, 98, 202);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.flex-start {
+  justify-content: flex-start;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.glass {
+  border-bottom: var(--transparent-border);
+  box-shadow: var(--box-shadow);
+  backdrop-filter: var(--backdrop-blur);
+}
+
+.dark {
+  background-color: var(--transparent-black);
+}
+
+.light {
+  background-color: var(--transparent-white);
+}
+
+.brand {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, .75);
+  font-family: var(--display-font);
+}
+
+.mb {
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  border-radius: .5rem;
+  min-width: 36rem;
+}
+
+.card-footer {
+  padding: 1rem 1.5rem;
+  font-size: 1.2rem;
+  /* background-color: rgba(255, 255, 255, .25); */
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.avatar {
+  width: 5.5rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+
+.coder-name {
+  font-size: 3rem;
+  line-height: 3rem;
+}
+
+.btn {
+  border: 0;
+  border-radius: .5rem;
+  cursor: pointer;
+  padding: .5rem 1rem;
+  color: white;
+  background-color: #2059ff;
+  transition: all 250ms ease-in-out;
+}
+
+.btn-danger {
+  background-color: rgb(214, 0, 86);
+}
+
+.btn:hover,
+.btn:active {
+  filter: opacity(85%);
+  box-shadow: .2rem .2rem .5rem rgba(0, 0, 0, .25);;
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  padding: .5rem 0;
+  color: rgba(255, 255, 255, .95);
+}
+
+main {
+  padding-top: 6rem;
+}
+
+input {
+  border: 0;
+  width: 100%;
+  display: block;
+  border-radius: .5rem;
+  padding: .5rem 1.5rem;
+  margin-bottom: 1.5rem;
+  background-color: var(--transparent-white);
+}
+
+/* 600px - 768px */
+@media (min-width: 37.5em) {
+  .container {
+    width: 80%;
+  }
+}
+
+/* 768px - 992px */
+@media (min-width: 48em) {
+  .container {
+    width: 70%;
+  }
+}
+
+/* 992px and up */
+@media (min-width: 62em) {
+  .container {
+    width: 70%;
+  }
+}
