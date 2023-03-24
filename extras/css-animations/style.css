@@ -1,0 +1,47 @@
+.parent {
+  background-color: cornflowerblue;
+  width: 400px;
+  height: 400px;
+}
+
+.child {
+  width: 25%;
+  aspect-ratio: 1 / 1;
+  background-color: darksalmon;
+  /* animation: four-corners 1s ease-in-out alternate-reverse; */
+}
+
+@keyframes four-corners {
+  33% {
+    background-color: orangered;
+    transform: translateY(300%);
+  }
+  66% {
+    background-color: orangered;
+    transform: translateY(300%) translateX(300%);
+  }
+  100% {
+    background-color: greenyellow;
+    transform: translateX(300%);
+  }
+}
+
+.btn {
+  padding: .5rem 1.5rem;
+  border: 0;
+  color: black;
+  background-color: rgb(234, 215, 10);
+  box-shadow: 3px 3px black;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+}
+
+.btn:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 6px 6px black;
+}
+
+.btn:active {
+  transform: translate(6px, 6px);
+  box-shadow: 0 0 black;
+}
