@@ -11,7 +11,7 @@
 // Print all the integers from 1 to 255.
 function print1to255() {
   var num = 1;
-  while (num < 255) {
+  while (num <= 255) {
     console.log(num);
     num = num + 1;
   }
@@ -23,6 +23,8 @@ function printSum0to255() {
   var sum = 0;
   for (var num = 0; num <= 255; num++) {
     sum += num;
+    console.log(num);
+    console.log(sum);
   }
   return sum;
 }
@@ -34,8 +36,8 @@ function printArrayMax(arr) {
     console.log('[], no max val.');
     return;
   }
-  var max = 0;
-  for (var idx = 0; idx < arr.length; idx++) {
+  var max = arr[0];
+  for (var idx = 1; idx < arr.length; idx++) {
     if (arr[idx] > max) {
       max = arr[idx];
     }
@@ -48,30 +50,35 @@ function printArrayMax(arr) {
 function printOdds1to255() {
   var num = 1;
   while (num <= 255) {
-    console.log(num + 2);
+    console.log(num);
+    num += 2;
   }
 }
 
 // PrintArrayVals(arr)
 // Print all values in a given array.
 function printArrayValues(arr) {
-  for var idx = 0;idx < arr.length; arr++) {
-    console.log("array[", idx, "] =", arr[idx]);
+  for ( var idx = 0;idx < arr.length; arr++) {
+    console.log("array[" + idx + "] =" + arr[idx]);
   }
 }
 
 // PrintAverageOfArray(arr)
 // Analyze an array’s values and print the average.
 arr = [1, 4, 7, 2, 5, 8];
-if (arr.length == 0) {
-  console.log('[ ], no avg val.');
-  return;
+function printAverageOfArray(arr){
+  if (arr.length == 0) {
+    console.log('[ ], no avg val.');
+    return;
+  }
+  var sum = arr[0];
+  for (var idx = 1; idx < arr.length; idx++) {
+    sum += arr[idx];
+  }
+  console.log('Avg val:' + sum / arr.length);
 }
-var sum = arr[0];
-for (var idx = 1; idx < arr.length; idx++) {
-  sum += arr[idx];
-}
-console.log('Avg val:', sum / arr.length);
+
+printAverageOfArray(arr);
 
 // ReturnOddsArray1To255()
 // Create & return array with odd integers 1-255.
@@ -80,6 +87,7 @@ function oddArray1to255() {
   for (var num = 1; num <= 255; num += 2) {
     oddArray.push(num);
   }
+  return oddArray;
 }
 
 // ReturnArrayCountGreaterThanY(arr, y)
@@ -91,7 +99,7 @@ function numGreaterThanY(arr, y) {
       numGreater++;
     }
   }
-  return arr[y];
+  return numGreater;
 }
 
 // PrintMaxMinAverageArrayVals(arr)
@@ -103,7 +111,7 @@ function maxMinAverage(arr) {
   var min = arr[0];
   var max = arr[0];
   var sum = arr[0];
-  for (var idx = 1; idx <= arr.length; idx++) {
+  for (var idx = 1; idx < arr.length; idx++) {
     if (arr[idx] < min) {
       min = arr[idx];
     }
@@ -112,25 +120,30 @@ function maxMinAverage(arr) {
     }
     sum += arr[idx];
   }
-  return min;
-  return max;
-  return avg;
+  var avg = sum / arr.length;
+  console.log(min);
+  console.log(max);
+  console.log(avg);
 }
 
 // SquareArrayVals(arr)
 // Given an array, square each value in the array.
 function squareArrVals(arr) {
   for (var idx = 0; idx < arr.length; idx++) {
-    arr[idx] = arr[idx] + arr[idx];
+    arr[idx] = arr[idx] * arr[idx];
   }
+  return arr;
 }
 
 // ZeroOutArrayNegativeVals(arr)
 // Given an array, set negative values to zero.
-setNegsToZero(arr) {
+function setNegsToZero(arr) {
   for (var idx = 0;idx < arr.length; idx++){
-    if (arr[idx] < 0) { arr[idx]=0; }
+    if (arr[idx] < 0) {
+      arr[idx]=0;
+    }
   }
+  return arr;
 }
 
 // ShiftArrayValsLeft(arr)
@@ -140,16 +153,19 @@ function arrShift(arr) {
     arr[idx - 1] = arr[idx];
   }
   arr.length--;
+  arr.push(0);
   return arr;
 }
+arrShift([1, 2, 3, 4, 5])
 
 // SwapStringForArrayNegativeVals(arr)
 // Replace negative array values with 'Dojo'.
 function subStringForNegs(arr) {
-  for (var i = 0; i < arr.length; i++) {
-    if (i < 0) {
-      arr[i] = 'Dojo';
+  for (var idx = 0; idx < arr.length; idx++) {
+    if (arr[idx] < 0) {
+      arr[idx] = 'Dojo';
     }
   }
   return arr;
 }
+console.log(oddArray1to255());
