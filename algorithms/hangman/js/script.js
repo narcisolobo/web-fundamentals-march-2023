@@ -14,9 +14,14 @@ const startButton = document.getElementById('start');
 
 // listen for click event on start button
 startButton.addEventListener('click', playGame);
+let incorrectCount = 0;
+let correctCount = 0;
 
 function playGame() {
-  startButton.remove();
+
+  image.src = `./images/hangman-${incorrectCount}.png`;
+
+  startButton.style.display = 'none';
   drawTiles();
 
   // select a random word from the array
@@ -51,8 +56,9 @@ function drawTiles() {
  * @returns {String}
  */
 function drawBlanks(wordArr = []) {
+  blanksContainer.innerHTML = '';
   for (let i = 0; i < wordArr.length; i++) {
-    const tile = `<button class="tile grid" id="${wordArr[i] + i}"></button>`;
+    const tile = `<button class="blank tile grid" id="${wordArr[i] + i}"></button>`;
     blanksContainer.innerHTML += tile;
   }
 }
@@ -83,6 +89,17 @@ function isCorrect(char, wordArr) {
 }
 
 /**
+ * Draws blank tiles from the word array.
+ * @returns {String}
+ */
+function showAnswer(wordArr = []) {
+  const blanks = document.getElementsByClassName('blank');
+  for (let i = 0; i < blanks.length; i++) {
+    blanks[i].innerText = wordArr[i].toUpperCase();
+  }
+}
+
+/**
  *
  * @param {HTMLDivElement} tile - The div the player clicked on.
  * @param {Array} wordArr - The array of chars belonging to the random word.
@@ -98,7 +115,7 @@ function checkTile(tile, wordArr = []) {
 
   // change tile character to lowercase
   const char = tile.innerText.toLowerCase();
-
+  
   // if character is correct, color the tile green
   if (isCorrect(char, wordArr)) {
     tile.classList.add('correct');
@@ -108,12 +125,33 @@ function checkTile(tile, wordArr = []) {
       if (wordArr[i] === char) {
         const blank = document.getElementById(`${char}${i}`);
         blank.innerText = char.toUpperCase();
+        correctCount++;
       }
+    }
+    if (correctCount === wordArr.length) {
+      image.src = './images/hangman-win.png';
+      message.innerText = 'You win!';
+      tilesContainer.innerHTML = '';
+      startButton.style.display = 'inline-block';
+      startButton.innerText = 'Restart';
+      incorrectCount = 0;
+      correctCount = 0;
     }
     return 'correct';
   } else {
     // character is incorrect, color the tile red
     tile.classList.add('incorrect');
+    incorrectCount++;
+    image.src = `./images/hangman-${incorrectCount}.png`;
+    if (incorrectCount === 7) {
+      message.innerText = 'Game over.';
+      tilesContainer.innerHTML = '';
+      showAnswer(wordArr);
+      startButton.style.display = 'inline-block';
+      startButton.innerText = 'Restart';
+      incorrectCount = 0;
+      correctCount = 0;
+    }
     return 'incorrect';
   }
 }
